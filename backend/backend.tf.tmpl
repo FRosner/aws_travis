@@ -1,6 +1,8 @@
 terraform {
   backend "s3" {
-    bucket = "${BACKEND_BUCKET_NAME}"
+    bucket         = "${BACKEND_BUCKET_NAME}"
+    key            = "terraform.tfstate"
+    region         = "eu-central-1"
     dynamodb_table = "${BACKEND_TABLE_NAME}"
   }
 }
