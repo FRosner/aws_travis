@@ -1,0 +1,6 @@
+terraform {
+  backend "s3" {
+    bucket = "${BACKEND_BUCKET_NAME}"
+    dynamodb_table = "${BACKEND_TABLE_NAME}"
+  }
+}
