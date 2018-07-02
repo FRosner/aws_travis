@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd website/static
-jekyll build
+bundle exec jekyll build
 cd -
 
 ./terraform init
