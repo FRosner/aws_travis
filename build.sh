@@ -5,11 +5,11 @@ bundle install
 bundle exec jekyll build
 cd -
 
-./terraform init
-./terraform validate website
+./terraform-linux init
+./terraform-linux validate website
 
 if [[ $TRAVIS_BRANCH == 'master' ]]
 then
-    ./terraform workspace select prod
-    ./terraform apply -auto-approve website
+    ./terraform-linux workspace select prod
+    ./terraform-linux apply -auto-approve website
 fi
