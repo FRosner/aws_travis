@@ -1,23 +1,7 @@
 language: generic
 
-stages:
-  - build
-  - validate
-  - name: deploy
-    if: branch = master
+install:
+  - gem install bundler jekyll
 
-jobs:
-  include:
-    - stage: build
-      script:
-        - cd website/static
-        - jekyll build
-        - cd -
-    - stage: validate
-      script:
-        - ./terraform init
-        - ./terraform validate website
-    - stage: deploy
-      script:
-        - ./terraform workspace select prod
-        - ./terraform apply -auto-approve website
+script:
+  - ./build.sh
