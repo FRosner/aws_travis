@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 cd website/static
+bundle install
 bundle exec jekyll build
 cd -
 
