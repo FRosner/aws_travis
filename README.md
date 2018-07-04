@@ -57,7 +57,8 @@ terraform apply -auto-approve website
 terraform workspace select prod
 terraform destroy -auto-approve website
 
-# Migrate back to local statet
+# Migrate back to local state
+terraform workspace select state
 terraform init bootstrap
 
 # Destroy remote state resources
